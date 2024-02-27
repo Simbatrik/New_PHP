@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Forms; 
+use App\Models\Companies; 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

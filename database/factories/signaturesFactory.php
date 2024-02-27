@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Signatures; 
+use App\Models\Forms; 
+use App\Models\users; 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

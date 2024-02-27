@@ -24,12 +24,12 @@ class users extends Model
 
     public function users()
     {
-        return $this->hasMany(Users::class);
+        return $this->hasMany(users::class);
     }
 
     public function companies()
     {
-        return $this->hasMany(Companies::class);
+       return $this->hasMany(Companies::class);
     }
 
     public function signatures()
