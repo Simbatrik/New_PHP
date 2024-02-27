@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CompaniesController;
-use App\Http\Controllers\usersController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\FieldsController;
 use App\Http\Controllers\AnswersController;
@@ -29,11 +29,11 @@ Route::get('/showCompanies/{id}', [CompaniesController::class, 'item']);
 Route::put('/updateCompanies/{id}', [CompaniesController::class, 'update']);
 Route::delete('/deleteCompanies/{id}', [CompaniesController::class, 'delete']);
 
-Route::get('/users', [usersController::class, 'list']);
-Route::post('/createUsers', [usersController::class, 'create']);
-Route::get('/showUsers/{id}', [usersController::class, 'item']);
-Route::put('/updateUsers/{id}', [usersController::class, 'update']);
-Route::delete('/deleteUsers/{id}', [usersController::class, 'delete']);
+Route::get('/users', [UsersController::class, 'list']);
+Route::post('/createUsers', [UsersController::class, 'create']);
+Route::get('/showUsers/{id}', [UsersController::class, 'item']);
+Route::put('/updateUsers/{id}', [UsersController::class, 'update']);
+Route::delete('/deleteUsers/{id}', [UsersController::class, 'delete']);
 
 Route::get('/forms', [FormsController::class, 'list']);
 Route::post('/createForms', [FormsController::class, 'create']);

@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Signatures; 
 use App\Models\Forms; 
-use App\Models\users; 
+use App\Models\Users; 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +21,7 @@ class signaturesFactory extends Factory
     {
         return [
             'form_id' => Forms::get()->random()->id,
-            'user_id' => users::get()->random()->id
+            'user_id' => Users::get()->random()->id
         ];
     }
 }

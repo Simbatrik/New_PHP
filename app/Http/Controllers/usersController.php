@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\users;
+use App\Models\Users;
 
-class usersController extends Controller
+class UsersController extends Controller
 {
     public function create (Request $request)
     {
@@ -20,20 +20,20 @@ class usersController extends Controller
             'email'=>'nullable', 
             'mobile'=>'nullable'
         ]);
-        $users = Users::create($date); 
-        return $users; 
+        $Users = Users::create($date); 
+        return $Users; 
     }
 
     public function item ($id)
     {
-        $users = Users::find($id); 
-        return $users; 
+        $Users = Users::find($id); 
+        return $Users; 
     }
 
     public function list ()
     {
-        $users = Users::get(); 
-        return $users; 
+        $Users = Users::get(); 
+        return $Users; 
     }
 
     public function update(Request $request, $id)
@@ -49,18 +49,18 @@ class usersController extends Controller
             'email'=>'nullable', 
             'mobile'=>'nullable'
         ]);
-        $users = Users::find($id)->update($date);
-        return $users;
+        $Users = Users::find($id)->update($date);
+        return $Users;
     }
 
     public function delete($id)
     {
-        $users = Users::find($id);
-        if($users)
+        $Users = Users::find($id);
+        if($Users)
         {
-            $users->delete();
+            $Users->delete();
 
         }
-        return $users; 
+        return $Users; 
     }
 }

@@ -2,16 +2,16 @@
 
 namespace Database\Factories;
 
-use App\Models\users; 
+use App\Models\Users; 
 use App\Models\Companies; 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\users>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Users>
  */
-class usersFactory extends Factory
+class UsersFactory extends Factory
 {
-    protected $model = users::class; 
+    protected $model = Users::class; 
     /**
      * Define the model's default state.
      *
