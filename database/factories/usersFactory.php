@@ -28,8 +28,7 @@ class UsersFactory extends Factory
             'department' => fake()->bs(),
             'job_title' => fake()->jobTitle(),
             'email' => fake()->email(),
-            'mobile' => fake()->phoneNumber(),
-            'company_id' => Companies::get()->random()->id
+            'mobile' => fake()->phoneNumber()
         ];
     }
 }

@@ -9,7 +9,10 @@ class SignaturesController extends Controller
 {
     public function create (Request $request)
     {
-        $date = $request->validate([]);
+        $date = $request->validate([
+            'user_id'=>'nullable',
+            'form_id'=>'nullable'
+        ]);
         $signatures = Signatures::create($date); 
         return $signatures; 
     }
@@ -28,7 +31,10 @@ class SignaturesController extends Controller
 
     public function update(Request $request, $id)
     {
-        $date = $request->validate([]);
+        $date = $request->validate([
+            'user_id'=>'nullable',
+            'form_id'=>'nullable'
+        ]);
         $signatures = Signatures::find($id)->update($date);
         return $signatures;
     }

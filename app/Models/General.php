@@ -5,20 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Signatures extends Model
+class General extends Model
 {
-    protected $table = 'signatures'; 
+    protected $table = 'General'; 
 
     protected $fillable = [
-        'form_id',
+        'company_id',
         'user_id'
     ];
-    
     use HasFactory;
 
-    public function forms()
+    public function companies()
     {
-        return $this->hasMany(Forms::class);
+       return $this->hasMany(Companies::class);
     }
 
     public function Users()

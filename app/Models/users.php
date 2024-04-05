@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Users extends Model 
 // implements JWTSubject
 {
+    use HasFactory;
+
+    protected $table = 'Users'; 
+
     protected $fillable = [
         'log_in', 
         'password', 
@@ -17,10 +21,9 @@ class Users extends Model
         'department', 
         'job_title',
         'email',
-        'mobile', 
-        'company_id'
+        'mobile'
     ];
-    use HasFactory;
+    
 
     public function Users()
     {

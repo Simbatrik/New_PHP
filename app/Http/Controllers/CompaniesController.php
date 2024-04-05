@@ -10,7 +10,8 @@ class CompaniesController extends Controller
     public function create (Request $request)
     {
         $date = $request->validate([
-            'name'=>'nullable'
+            'name'=>'nullable', 
+            'password'=>'nullable'
         ]);
         $companies = Companies::create($date); 
         return $companies; 
@@ -22,6 +23,13 @@ class CompaniesController extends Controller
         return $companies; 
     }
 
+    public function log_in_name ($id)
+    {
+        $companies = Companies::find($id); 
+        return $companies; 
+         
+    }
+
     public function list ()
     {
         $companies = Companies::get(); 
@@ -31,7 +39,8 @@ class CompaniesController extends Controller
     public function update(Request $request, $id)
     {
         $date = $request->validate([
-            'name'=>'nullable'
+            'name'=>'nullable',
+            'password'=>'nullable'
         ]);
         $companies = Companies::find($id)->update($date);
         return $companies;

@@ -20,7 +20,7 @@ class companiesFactory extends Factory
     {
         return [
             'name' => fake()->company(),
-            'user_id' => users::get()->random()->id
+            'password' => fake()->password()
         ];
     }
 }

@@ -10,6 +10,9 @@ use App\Http\Controllers\FieldsController;
 use App\Http\Controllers\AnswersController;
 use App\Http\Controllers\SignaturesController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GeneralController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +29,7 @@ use App\Http\Controllers\AuthController;
 Route::get('/companies', [CompaniesController::class, 'list']);
 Route::post('/createCompanies', [CompaniesController::class, 'create']);
 Route::get('/showCompanies/{id}', [CompaniesController::class, 'item']);
+Route::get('/getNameForLogin/{name}', [CompaniesController::class, 'log_in_name']);
 Route::put('/updateCompanies/{id}', [CompaniesController::class, 'update']);
 Route::delete('/deleteCompanies/{id}', [CompaniesController::class, 'delete']);
 
@@ -59,10 +63,17 @@ Route::get('/showSignatures/{id}', [SignaturesController::class, 'item']);
 Route::put('/updateSignatures/{id}', [SignaturesController::class, 'update']);
 Route::delete('/deleteSignatures/{id}', [SignaturesController::class, 'delete']);
 
-Route::prefix('auth')->middleware('api')->controller(AuthController::class)->group(function(){
-    Route::post('login', 'login');
-    Route::post('user', 'user');
-    Route::post('logout', 'logout');
-    Route::post('refresh', 'refresh');
-});
+Route::get('/general', [GeneralController::class, 'list']);
+Route::post('/createGeneral', [GeneralController::class, 'create']);
+Route::get('/showGeneral/{id}', [GeneralController::class, 'item']);
+Route::put('/updateGeneral/{id}', [GeneralController::class, 'update']);
+Route::delete('/deleteGeneral/{id}', [GeneralController::class, 'delete']);
+
+
+// Route::prefix('auth')->middleware('api')->controller(AuthController::class)->group(function(){
+//     Route::post('login', 'login');
+//     Route::post('user', 'user');
+//     Route::post('logout', 'logout');
+//     Route::post('refresh', 'refresh');
+// });
 
