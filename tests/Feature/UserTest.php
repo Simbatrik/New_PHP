@@ -18,18 +18,20 @@ class UserTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
-    {
-        $response = $this->get('/');
 
-        $response->assertStatus(200);
-    }
-
-    public function test_create()
+    public function test_create_user()
     {
         $user = Users::factory()->make()->toArray();
         $response = $this->post('api/createUsers', $user);
-
         $response->assertStatus(201);
     }
+
+    public function test_show_all_users()
+    {
+        $user = Users::get()->toArray(); 
+        $response = $this->get('api/users', $user);
+        $response->assertStatus(200);
+    }
+
+
 }
